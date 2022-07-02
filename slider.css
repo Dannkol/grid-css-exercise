@@ -1,0 +1,92 @@
+ul{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+li{
+	display: inline-block;
+}
+
+.textslider{
+	color: white;
+  font-size:1.2em;
+  font-weight:100;
+  letter-spacing:1px;
+}
+
+#contenedor{
+	
+    box-shadow: 0 0 10px 0 rgb(255, 60, 0) , 20px 0px 100px 0px rgb(255, 60, 0); /* left/right padding  (IE8 needs fallback) */
+	width:1080px;
+	height: 770px;
+	margin: 20px auto 0 auto;
+	overflow:hidden;
+	position: relative;
+}
+#slider{
+	width: 2400px; /* *600px la dimension de la imagen */
+	height: 200px;
+	position: relative;
+	transition: all 500ms ease-in-out;
+	
+  -webkit-backface-visibility: hidden;
+}
+#slider div{
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	padding: 7px;
+	bottom: 2px;
+	left: 0px;
+	width: 100%;
+}
+
+#slider li:nth-child(1){
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#slider li:nth-child(2){
+	position: absolute;
+	top: 0px;
+	left: 1080px;
+}
+#slider li:nth-child(3){
+	position: absolute;
+	top: 0px;
+	left: 2160px;
+}
+#slider li:nth-child(4){
+	position: absolute;
+	top: 0px;
+	left: 3240px;
+}
+
+.mini{
+	
+	cursor: ew-resize;
+	float: left;
+	margin-top: 720px;
+	width: 25%;
+	transition: all .5s linear;
+}
+
+.mini:hover{
+	-webkit-filter: grayscale(0%);
+}
+
+#contenedor div:nth-child(1):hover ~ #slider{
+  transform: translateX(0px) translateZ(0px);
+	-webkit-filter: grayscale(0%);
+}
+#contenedor div:nth-child(2):hover ~ #slider{
+  transform: translateX(-1080px) translateZ(0px);
+	-webkit-filter: grayscale(0%);
+}
+#contenedor div:nth-child(3):hover ~ #slider{
+  transform: translateX(-2160px) translateZ(0px);
+	-webkit-filter: grayscale(0%);
+}
+#contenedor div:nth-child(4):hover ~ #slider{
+  transform: translateX(-3240px) translateZ(0px);
+	-webkit-filter: grayscale(0%);
+}
